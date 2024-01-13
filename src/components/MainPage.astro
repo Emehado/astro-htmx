@@ -1,0 +1,43 @@
+---
+import UserList from "../pages/partials/list.astro";
+---
+
+<section>
+  <div class="mb-5">
+    <h1 class="text-5xl">Users</h1>
+    <div class="text-2xl mb-5">Page Example</div>
+    <div class="flex">
+      <h2 class="mr-2">Page</h2>
+      {
+        [1, 2, 3].map((page) => (
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center border rounded-xl mr-2 hover:bg-gray-500"
+            hx-get={`/partials/list?page=${page}`}
+            hx-target="#content"
+          >
+            {page}
+          </a>
+        ))
+      }
+    </div>
+    <div id="content" class="mt-3 p-6">
+      <UserList />
+    </div>
+  </div>
+  <div class="w-full">
+    <h2 class="text-2xl mb-5">Search Example</h2>
+    <input
+      type="text"
+      name="search"
+      class="border-2 border-gray-300 rounded-md p-2 w-full text-black"
+      placeholder="Search..."
+      hx-get="/partials/search"
+      hx-target="#search-results"
+      hx-trigger="keyup changed delay:500ms"
+    />
+    <div id="search-results">
+      <p>Search results will appear here</p>
+    </div>
+  </div>
+</section>

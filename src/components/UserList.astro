@@ -1,0 +1,32 @@
+---
+const { users } = Astro.props;
+---
+
+<table class="w-full border-collapse">
+  <thead>
+    <tr>
+      <th class="bg-gray-200 text-gray-700 py-2 px-4">Avatar</th>
+      <th class="bg-gray-200 text-gray-700 py-2 px-4">First</th>
+      <th class="bg-gray-200 text-gray-700 py-2 px-4">Last</th>
+      <th class="bg-gray-200 text-gray-700 py-2 px-4">Email</th>
+      <th class="bg-gray-200 text-gray-700 py-2 px-4">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      users?.map((user) => {
+        return (
+          <tr class="hover:bg-gray-500">
+            <td class="py-2 px-4">
+              <img src={user.avatar} alt="" class="w-10 h-10 rounded-full" />
+            </td>
+            <td class="py-2 px-4">{user.first}</td>
+            <td class="py-2 px-4">{user.last}</td>
+            <td class="py-2 px-4">{user.email}</td>
+            <td class="py-2 px-4">{user.phone}</td>
+          </tr>
+        );
+      })
+    }
+  </tbody>
+</table>
