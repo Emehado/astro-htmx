@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import BlogPage from "../components/MainPage.astro";
+import MainPage from "../components/MainPage.astro";
 import Counter from "./partials/Counter.astro";
 ---
 
@@ -36,7 +36,29 @@ import Counter from "./partials/Counter.astro";
       </defs>
     </svg>
     <h1>Welcome to <span class="text-gradient">Astro-Htmx</span></h1>
-    <BlogPage />
+    <div class="absolute right-5">
+      <div class="bg-white rounded-full text-gray-700 py-2 px-4">
+        <div id="oob-counter">0</div>
+      </div>
+    </div>
+    <div class="instructions">
+      <p>
+        This is a demo of <strong>Astro</strong> and <strong>Htmx</strong> working
+        together.
+      </p>
+      <p>
+        <strong
+          >interact with the components below to see the magic happen!</strong
+        >
+      </p>
+      <p>
+        <code>htmx</code> is a javascript library that allows you to access the full
+        power of
+        <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code> directly
+        in your browser without having to write any code.
+      </p>
+    </div>
+    <MainPage />
     <Counter />
   </main>
 </Layout>

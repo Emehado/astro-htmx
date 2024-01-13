@@ -8,6 +8,10 @@ try {
 } catch (error) {}
 ---
 
+{count > 0 && <div id="oob-counter" hx-swap-oob="true">
+{count}
+</div>}
+
 <form id="counter" class="mt-3" hx-post="/partials/counter">
   <h1>Counter Example</h1>
   <input type="hidden" name="count" value={count} />
